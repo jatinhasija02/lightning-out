@@ -107,7 +107,7 @@
 
             async function fetchSession() {
                 try {
-                    const res = await fetch('/auth/session', { credentials: 'include' });
+                    const res = await fetch(instanceUrl, { credentials: 'include' });
                     if (!res.ok) throw new Error('HTTP ' + res.status);
                     const data = await res.json();
                     sessionId = data.sessionId;
